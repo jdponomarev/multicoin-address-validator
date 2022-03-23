@@ -10272,9 +10272,10 @@ function decode (bechString, enc) {
     exports.JSBigInt = BigInteger; // exports.BigInteger changed to exports.JSBigInt
     })(typeof exports !== 'undefined' ? exports : this);
 },{}],47:[function(require,module,exports){
-(function (Buffer){(function (){
 'use strict';
-
+console.log("blanke 256")
+var Buffer = require('buffer/').Buffer;
+console.log("Buffer 11 ",Buffer);
 /**
  * Credits to https://github.com/cryptocoinjs/blake-hash
  */
@@ -10462,8 +10463,7 @@ Blake256.prototype.digest = function (encoding) {
 
 module.exports = Blake256;
 
-}).call(this)}).call(this,require("buffer").Buffer)
-},{"buffer":4}],48:[function(require,module,exports){
+},{"buffer/":4}],48:[function(require,module,exports){
 'use strict';
 
 /**

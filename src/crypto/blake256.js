@@ -1,5 +1,7 @@
 'use strict';
-
+console.log("blanke 256")
+var Buffer = require('buffer/').Buffer;
+console.log("Buffer 11 ",Buffer);
 /**
  * Credits to https://github.com/cryptocoinjs/blake-hash
  */
