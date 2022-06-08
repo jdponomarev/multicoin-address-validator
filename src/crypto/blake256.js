@@ -1,5 +1,7 @@
 'use strict';
+console.log("loading buffer");
 var Buffer = require('buffer/').Buffer;
+console.log("buffer loaded");
 /**
  * Credits to https://github.com/cryptocoinjs/blake-hash
  */
@@ -149,7 +151,9 @@ Blake256.prototype._padding = function () {
         hi += 1
     }
 
+    console.log("creating msglen");
     var msglen = Buffer.allocUnsafe(8)
+    console.log("created msglen");
     msglen.writeUInt32BE(hi, 0)
     msglen.writeUInt32BE(lo, 4)
 
@@ -180,7 +184,9 @@ Blake256.prototype._padding = function () {
 Blake256.prototype.digest = function (encoding) {
     this._padding()
 
+    console.log("digest");
     var buffer = Buffer.allocUnsafe(32)
+    console.log("digested");
     for (var i = 0; i < 8; ++i) buffer.writeUInt32BE(this._h[i], i * 4)
     return buffer.toString(encoding);
 }
